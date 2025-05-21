@@ -49,7 +49,7 @@ POST /transactions/transfer – Transfere valores entre contas
 
 GET /transactions/account/{accountId} – Retorna histórico de transações de uma conta
 
-⚠️ Os endpoints podem evoluir conforme novas funcionalidades forem sendo implementadas.
+⚠️ Os endpoints podem evoluir conforme novas funcionalidades forem sendo implementadas.rm .git/objects/pack/._*
 
 <hr></hr>
 ☁️ Deploy na Nuvem (Railway)
