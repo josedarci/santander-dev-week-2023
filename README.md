@@ -1,62 +1,69 @@
-# Santander Dev Week 2023
+# 💳 Banking API - Spring Boot
 
-Java RESTful API criada para a Santander Dev Week.
+Projeto desenvolvido como parte do desafio da **Santander Dev Week 2023**, com aprimoramentos pessoais para compor meu portfólio como desenvolvedor backend. Esta API simula funcionalidades bancárias como gestão de contas, clientes e cartões.
 
-## Principais Tecnologias
- - **Java 17**: Utilizaremos a versão LTS mais recente do Java para tirar vantagem das últimas inovações que essa linguagem robusta e amplamente utilizada oferece;
- - **Spring Boot 3**: Trabalharemos com a mais nova versão do Spring Boot, que maximiza a produtividade do desenvolvedor por meio de sua poderosa premissa de autoconfiguração;
- - **Spring Data JPA**: Exploraremos como essa ferramenta pode simplificar nossa camada de acesso aos dados, facilitando a integração com bancos de dados SQL;
- - **OpenAPI (Swagger)**: Vamos criar uma documentação de API eficaz e fácil de entender usando a OpenAPI (Swagger), perfeitamente alinhada com a alta produtividade que o Spring Boot oferece;
- - **Railway**: facilita o deploy e monitoramento de nossas soluções na nuvem, além de oferecer diversos bancos de dados como serviço e pipelines de CI/CD.
+## 🚀 Tecnologias Utilizadas
 
-## [Link do Figma](https://www.figma.com/file/0ZsjwjsYlYd3timxqMWlbj/SANTANDER---Projeto-Web%2FMobile?type=design&node-id=1421%3A432&mode=design&t=6dPQuerScEQH0zAn-1)
+- ✅ Java 17 (LTS)
+- ✅ Spring Boot 3
+- ✅ Spring Data JPA
+- ✅ Swagger / OpenAPI
+- ✅ Gradle
+- ✅ H2 (banco de dados em memória)
+- ✅ Deploy com Railway (opcional)
 
-O Figma foi utilizado para a abstração do domínio desta API, sendo útil na análise e projeto da solução.
+## 📦 Como executar localmente
 
-## Diagrama de Classes (Domínio da API)
+### Pré-requisitos
 
-```mermaid
-classDiagram
-  class User {
-    -String name
-    -Account account
-    -Feature[] features
-    -Card card
-    -News[] news
-  }
+- Java 17+
+- Gradle ou suporte ao wrapper (`./gradlew`)
+- IntelliJ ou IDE de sua preferência
 
-  class Account {
-    -String number
-    -String agency
-    -Number balance
-    -Number limit
-  }
+### Passos para execução
 
-  class Feature {
-    -String icon
-    -String description
-  }
-
-  class Card {
-    -String number
-    -Number limit
-  }
-
-  class News {
-    -String icon
-    -String description
-  }
-
-  User "1" *-- "1" Account
-  User "1" *-- "N" Feature
-  User "1" *-- "1" Card
-  User "1" *-- "N" News
+```bash
+# Clone o repositório
+git clone https://github.com/josedarci/banking-api-springboot.git
+cd banking-api-springboot
 ```
+A aplicação será executada em: 📍 http://localhost:8080  <hr></hr>
+🔍 Documentação da API
+Acesse a documentação Swagger: 👉 http://localhost:8080/swagger-ui/index.html  <hr></hr>
 
-## IMPORTANTE
+🛠 Endpoints principais
+📂 Usuários e Contas
+GET /clients – Lista todos os clientes
 
-Este projeto foi construído com um viés totalmente educacional para a DIO. Por isso, disponibilizamos uma versão mais robusta dele no repositório oficial da DIO:
+POST /accounts – Cria uma nova conta
 
-### [digitalinnovationone/santander-dev-week-2023-api](https://github.com/digitalinnovationone/santander-dev-week-2023-api)
+💳 Cartões
+GET /cards – Lista cartões disponíveis
 
-Lá incluímos todas os endpoints de CRUD, além de aplicar boas práticas (uso de DTOs e refinamento na documentação da OpenAPI). Sendo assim, caso queira um desafio/referência mais completa é só acessar 👊🤩
+💰 Transações Bancárias
+POST /transactions/deposit – Realiza um depósito em uma conta
+
+POST /transactions/withdraw – Realiza um saque de uma conta
+
+POST /transactions/transfer – Transfere valores entre contas
+
+GET /transactions/account/{accountId} – Retorna histórico de transações de uma conta
+
+⚠️ Os endpoints podem evoluir conforme novas funcionalidades forem sendo implementadas.
+
+<hr></hr>
+☁️ Deploy na Nuvem (Railway)
+Você pode clonar este projeto e implantar facilmente no Railway:  
+Acesse: https://railway.app
+Clique em "New Project" → "Deploy from GitHub"
+Selecione este repositório
+Configure variáveis de ambiente (se necessário)
+<hr></hr>
+👨‍💻 Autor
+Desenvolvido por José Darci Rodrigues Junior 🔗 https://github.com/josedarci  Projeto inspirado e baseado no evento Santander Dev Week 2023, com melhorias e estrutura profissional aplicadas para fins de portfólio.
+
+Principais melhorias:
+- Separação visual com linhas horizontais (`---`)
+- Blocos de código bem delimitados
+- Listas e links organizados
+- Destaque para comandos e URLs
